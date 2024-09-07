@@ -1,4 +1,4 @@
-FROM python:3.9.5-alpine
+FROM python:3.12-alpine
 
 # Build arguments
 ARG FLASK_DEBUG=False \
@@ -31,4 +31,4 @@ EXPOSE $PORT
 USER $USER:$GROUP
 
 # Start app
-CMD flask run --host=$HOST --port=$PORT
+CMD ["sh", "-c", "flask run --host=$HOST --port=$PORT"]
